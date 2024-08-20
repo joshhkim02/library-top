@@ -1,0 +1,73 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: minmax(100px, .5fr) minmax(600px, 3fr) minmax(100px, .2fr);
+    gap: 10px;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.main {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(275px, 1fr));
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 225px;
+    height: 275px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.footer {
+    border: 1px solid black;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
