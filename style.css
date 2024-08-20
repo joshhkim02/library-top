@@ -72,3 +72,16 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
 }
+
+dialog {
+    margin: 0;
+    transform: translateX(-50%) translateY(30%);
+    left: 50%;
+    width: 500px;
+    height: 500px;
+}
+
+::backdrop {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.75;
+  }

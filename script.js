@@ -1,5 +1,8 @@
-    const myLibrary = [];
-    const main = document.querySelector('.main');
+const myLibrary = [];
+const main = document.querySelector('.main');
+const dialog = document.querySelector('dialog');
+const addButton = document.querySelector('.btn-add');
+const closeButton = document.querySelector('dialog button');
     
 function Book(author, title, pages, isRead) {
     this.author = author;
@@ -24,21 +27,21 @@ function displayLibrary(library) {
     }
 }
 
+addButton.addEventListener('click', () => {
+    dialog.showModal();
+})
+
+closeButton.addEventListener('click', () => {
+    dialog.close();
+})
 
 const book1 = new Book('Harry Potter', 'Spells', 93, 'yes');
 const book2 = new Book('Gandalf', 'Hobbits', 183, 'no');
 const book3 = new Book('Legolas', 'Bows', 132, 'yes');
-const book4 = new Book('Harry Potter', 'Spells', 93, 'yes');
-const book5 = new Book('Gandalf', 'Hobbits', 183, 'no');
-const book6 = new Book('Legolas', 'Bows', 132, 'yes');
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
-addBookToLibrary(book4);
-addBookToLibrary(book5);
-addBookToLibrary(book6);
-
 
 console.log(myLibrary);
 
