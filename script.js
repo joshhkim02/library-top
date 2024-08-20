@@ -16,7 +16,10 @@ function displayLibrary(library) {
     for (const book of library) {
         const createBook = document.createElement('div');
         createBook.classList.add('card');
-        createBook.textContent = `${book.title} ${book.author} ${book.pages} ${book.isRead}`;
+        createBook.textContent = `${book.title}
+                                  ${book.author}
+                                  ${book.pages}
+                                  ${book.isRead}`;
         main.appendChild(createBook);
     }
 }
