@@ -9,55 +9,57 @@
 </head>
 <body>
     <dialog>
-        <form>
-            <p>
-                <label for="book_title">
-                    <span>Title:</span>
-                </label>
-                <input
-                    type="text"
-                    id="book_title"
-                    name="title"
-                    placeholder="Dune"
-                    required
-                />
-            </p>
-            <p>
-                <label for="author_name">
-                    <span>Author:</span>
-                </label>
-                <input
-                    type="text"
-                    id="author_name"
-                    name="author"
-                    placeholder="Frank Herbert"
-                    required
-                />
-            </p>
-            <p>
-                <label for="num_pages">
-                    <span>Pages:</span>
-                </label>
-                <input
-                    type="text"
-                    id="num_pages"
-                    name="pages"
-                    placeholder="412"
-                    required
-                />
-            </p>
-            <p>
-                <label for="is_read">
-                    <span>Finished reading:</span>
-                </label>
-                <input
-                    type="text"
-                    id="is_read"
-                    name="read"
-                    placeholder="Yes"
-                    required
-                />
-            </p>
+        <form class="book_form">
+            <div class="input-container">
+                <p>
+                    <label for="book_title">
+                        <span>Title:</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="book_title"
+                        name="title"
+                        placeholder="Dune"
+                        required
+                    />
+                </p>
+                <p>
+                    <label for="author_name">
+                        <span>Author:</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="author_name"
+                        name="author"
+                        placeholder="Frank Herbert"
+                        required
+                    />
+                </p>
+                <p>
+                    <label for="num_pages">
+                        <span>Pages:</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="num_pages"
+                        name="pages"
+                        placeholder="412"
+                        required
+                    />
+                </p>
+                <p>
+                    <label for="is_read">
+                        <span>Finished reading:</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="is_read"
+                        name="read"
+                        placeholder="Yes"
+                        required
+                    />
+                </p>
+            </div>
             <div class="btn-container">
                 <button class="btn-close">Close</button>
                 <button class="btn-submit">Submit</button>

@@ -18,6 +18,13 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
+function resetInput() {
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    readInput.value = "";
+}
+
 function addBookToLibrary(book) {
     return myLibrary.push(book);
 }
@@ -53,10 +60,7 @@ submitButton.addEventListener('click', (event) => {
     main.appendChild(createBook);
 
     // Reset input values in form 
-    titleInput.value = "";
-    authorInput.value = "";
-    pagesInput.value = "";
-    readInput.value = "";
+    resetInput();
 
     // Prevent trying to send data to server and close the dialog box
     event.preventDefault();
@@ -69,6 +73,7 @@ addButton.addEventListener('click', () => {
 
 closeButton.addEventListener('click', () => {
     dialog.close();
+    resetInput();
 })
 
 const book1 = new Book('Fahrenheit 451', 'Ray Bradbury', 192, 'Yes');
