@@ -26,10 +26,10 @@ function displayLibrary(library) {
     for (const book of library) {
         const createBook = document.createElement('div');
         createBook.classList.add('card');
-        createBook.textContent = `${book.title}
-                                  ${book.author}
-                                  ${book.pages}
-                                  ${book.isRead}`;
+        createBook.textContent = `Title: ${book.title}
+                                  Author: ${book.author}
+                                  Pages: ${book.pages}
+                                  Has read: ${book.isRead}`;
         main.appendChild(createBook);
     }
 }
@@ -46,10 +46,10 @@ submitButton.addEventListener('click', (event) => {
     addBookToLibrary(newBook);
     const createBook = document.createElement('div');
     createBook.classList.add('card');
-    createBook.textContent = `${newBook.title}
-                              ${newBook.author}
-                              ${newBook.pages}
-                              ${newBook.isRead}`;
+    createBook.textContent = `Title: ${newBook.title}
+                              Author: ${newBook.author}
+                              Pages: ${newBook.pages}
+                              Has read: ${newBook.isRead}`;
     main.appendChild(createBook);
 
     // Reset input values in form 
@@ -72,7 +72,7 @@ closeButton.addEventListener('click', () => {
 })
 
 const book1 = new Book('Fahrenheit 451', 'Ray Bradbury', 192, 'Yes');
-const book2 = new Book('Flowers for Algernon', 'Daniel keyes', 311, 'Yes');
+const book2 = new Book('Flowers for Algernon', 'Daniel Keyes', 311, 'Yes');
 const book3 = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 208, 'No');
 
 addBookToLibrary(book1);
