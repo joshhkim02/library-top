@@ -94,6 +94,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     width: 225px;
     height: 275px;
     padding: 10px;
@@ -177,6 +180,27 @@ span {
 }
 
 .btn-close:hover,
-.btn-submit:hover {
+.btn-submit:hover,
+.book-btn:hover {
     cursor: pointer;
+}
+
+.book-btn {
+    padding: 10px;
+    height: 40px;
+    width: 75px;
+    font-size: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f1faee;
+}
+
+.book-btn-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 150px;
+    width: 125px;
 }

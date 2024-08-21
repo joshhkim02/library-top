@@ -38,6 +38,24 @@ function displayLibrary(library) {
                                   Pages: ${book.pages}
                                   Has read: ${book.isRead}`;
         main.appendChild(createBook);
+
+        // Create container to hold buttons
+        const bookContainer = document.createElement('div');
+        bookContainer.classList.add('book-btn-container');
+        createBook.appendChild(bookContainer);
+
+        // Add delete and read buttons
+        const deleteBook = document.createElement('button');
+        const readBook = document.createElement('button');
+
+        deleteBook.classList.add('book-btn', 'delete-book');
+        readBook.classList.add('book-btn', 'remove-book');
+
+        deleteBook.textContent = 'Remove';
+        readBook.textContent = 'Finished';
+
+        bookContainer.appendChild(deleteBook);
+        bookContainer.appendChild(readBook);
     }
 }
 
@@ -59,6 +77,24 @@ submitButton.addEventListener('click', (event) => {
                               Has read: ${newBook.isRead}`;
     main.appendChild(createBook);
 
+    // Create container to hold buttons
+    const bookContainer = document.createElement('div');
+    bookContainer.classList.add('book-btn-container');
+    createBook.appendChild(bookContainer);
+
+    // Add delete and read buttons
+    const deleteBook = document.createElement('button');
+    const readBook = document.createElement('button');
+
+    deleteBook.classList.add('book-btn');
+    readBook.classList.add('book-btn');
+
+    deleteBook.textContent = 'Remove';
+    readBook.textContent = 'Finished';
+
+    bookContainer.appendChild(deleteBook);
+    bookContainer.appendChild(readBook);
+
     // Reset input values in form 
     resetInput();
 
@@ -69,12 +105,13 @@ submitButton.addEventListener('click', (event) => {
 
 addButton.addEventListener('click', () => {
     dialog.showModal();
-})
+});
 
 closeButton.addEventListener('click', () => {
     dialog.close();
     resetInput();
-})
+});
+
 
 const book1 = new Book('Fahrenheit 451', 'Ray Bradbury', 192, 'Yes');
 const book2 = new Book('Flowers for Algernon', 'Daniel Keyes', 311, 'Yes');
