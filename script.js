@@ -29,36 +29,6 @@ function addBookToLibrary(book) {
     return myLibrary.push(book);
 }
 
-function displayLibrary(library) {
-    for (const book of library) {
-        const createBook = document.createElement('div');
-        createBook.classList.add('card');
-        createBook.textContent = `Title: ${book.title}
-                                  Author: ${book.author}
-                                  Pages: ${book.pages}
-                                  Has read: ${book.isRead}`;
-        main.appendChild(createBook);
-
-        // Create container to hold buttons
-        const bookContainer = document.createElement('div');
-        bookContainer.classList.add('book-btn-container');
-        createBook.appendChild(bookContainer);
-
-        // Add delete and read buttons
-        const deleteBook = document.createElement('button');
-        const readBook = document.createElement('button');
-
-        deleteBook.classList.add('book-btn', 'delete-book');
-        readBook.classList.add('book-btn', 'remove-book');
-
-        deleteBook.textContent = 'Remove';
-        readBook.textContent = 'Finished';
-
-        bookContainer.appendChild(deleteBook);
-        bookContainer.appendChild(readBook);
-    }
-}
-
 submitButton.addEventListener('click', (event) => {
     // Get user input
     let title = titleInput.value;
@@ -86,8 +56,8 @@ submitButton.addEventListener('click', (event) => {
     const deleteBook = document.createElement('button');
     const readBook = document.createElement('button');
 
-    deleteBook.classList.add('book-btn');
-    readBook.classList.add('book-btn');
+    deleteBook.classList.add('delete-book');
+    readBook.classList.add('read-book');
 
     deleteBook.textContent = 'Remove';
     readBook.textContent = 'Finished';
@@ -111,14 +81,3 @@ closeButton.addEventListener('click', () => {
     dialog.close();
     resetInput();
 });
-
-
-const book1 = new Book('Fahrenheit 451', 'Ray Bradbury', 192, 'Yes');
-const book2 = new Book('Flowers for Algernon', 'Daniel Keyes', 311, 'Yes');
-const book3 = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 208, 'No');
-
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-
-displayLibrary(myLibrary);

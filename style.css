@@ -181,11 +181,13 @@ span {
 
 .btn-close:hover,
 .btn-submit:hover,
-.book-btn:hover {
+.delete-book:hover,
+.read-book:hover {
     cursor: pointer;
 }
 
-.book-btn {
+.delete-book,
+.read-book {
     padding: 10px;
     height: 40px;
     width: 75px;
