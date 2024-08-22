@@ -6,6 +6,7 @@ const addButton = document.querySelector('.btn-add');
 const closeButton = document.querySelector('.btn-close');
 const submitButton = document.querySelector('.btn-submit');
 
+// Form selectors
 const titleInput = document.querySelector('#book_title');
 const authorInput = document.querySelector('#author_name');
 const pagesInput = document.querySelector('#num_pages');
@@ -53,17 +54,17 @@ submitButton.addEventListener('click', (event) => {
     createBook.appendChild(bookContainer);
 
     // Add delete and read buttons
-    const deleteBook = document.createElement('button');
-    const readBook = document.createElement('button');
+    const deleteBookBtn = document.createElement('button');
+    const readBookBtn = document.createElement('button');
 
-    deleteBook.classList.add('delete-book');
-    readBook.classList.add('read-book');
+    deleteBookBtn.classList.add('delete-book');
+    readBookBtn.classList.add('read-book');
 
-    deleteBook.textContent = 'Remove';
-    readBook.textContent = 'Finished';
+    deleteBookBtn.textContent = 'Remove';
+    readBookBtn.textContent = 'Finished';
 
-    bookContainer.appendChild(deleteBook);
-    bookContainer.appendChild(readBook);
+    bookContainer.appendChild(deleteBookBtn);
+    bookContainer.appendChild(readBookBtn);
 
     // Reset input values in form 
     resetInput();
