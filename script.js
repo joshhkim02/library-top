@@ -30,6 +30,10 @@ function addBookToLibrary(book) {
     return myLibrary.push(book);
 }
 
+function removeBookFromLibrary(id) {
+    return myLibrary.splice(id, 1);
+}
+
 function displayLibrary(library) {
     for (const book of library) {
         const createBook = document.createElement('div');
@@ -59,7 +63,8 @@ function displayLibrary(library) {
         bookContainer.appendChild(readBook);
 
         deleteBook.addEventListener('click', () => {
-            console.log('hello');
+            removeBookFromLibrary(myLibrary.indexOf(book));
+            main.removeChild(createBook);
         })
 
         readBook.addEventListener('click', () => {
