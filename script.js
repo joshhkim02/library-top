@@ -57,6 +57,14 @@ function displayLibrary(library) {
 
         bookContainer.appendChild(deleteBook);
         bookContainer.appendChild(readBook);
+
+        deleteBook.addEventListener('click', () => {
+            console.log('hello');
+        })
+
+        readBook.addEventListener('click', () => {
+            console.log('whatup doe');
+        })
     }
 }
 
@@ -77,7 +85,10 @@ submitButton.addEventListener('click', (event) => {
     event.preventDefault();
     dialog.close();
 
+    // "Reset" the page and display the updated library
+    main.replaceChildren();
     displayLibrary(myLibrary);
+    console.log(myLibrary);
 });
 
 addButton.addEventListener('click', () => {
@@ -88,3 +99,4 @@ closeButton.addEventListener('click', () => {
     dialog.close();
     resetInput();
 });
+
