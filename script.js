@@ -30,6 +30,36 @@ function addBookToLibrary(book) {
     return myLibrary.push(book);
 }
 
+function displayLibrary(library) {
+    for (const book of library) {
+        const createBook = document.createElement('div');
+        createBook.classList.add('card');
+        createBook.textContent = `Title: ${book.title}
+                                  Author: ${book.author}
+                                  Pages: ${book.pages}
+                                  Has read: ${book.isRead}`;
+        main.appendChild(createBook);
+
+        // Create container to hold buttons
+        const bookContainer = document.createElement('div');
+        bookContainer.classList.add('book-btn-container');
+        createBook.appendChild(bookContainer);
+
+        // Add delete and read buttons
+        const deleteBook = document.createElement('button');
+        const readBook = document.createElement('button');
+
+        deleteBook.classList.add('book-btn', 'delete-book');
+        readBook.classList.add('book-btn', 'read-book');
+
+        deleteBook.textContent = 'Remove';
+        readBook.textContent = 'Finished';
+
+        bookContainer.appendChild(deleteBook);
+        bookContainer.appendChild(readBook);
+    }
+}
+
 submitButton.addEventListener('click', (event) => {
     // Get user input
     let title = titleInput.value;
@@ -40,38 +70,14 @@ submitButton.addEventListener('click', (event) => {
     // Create and add new book to DOM tree
     let newBook = new Book(title, author, pages, read);
     addBookToLibrary(newBook);
-    const createBook = document.createElement('div');
-    createBook.classList.add('card');
-    createBook.textContent = `Title: ${newBook.title}
-                              Author: ${newBook.author}
-                              Pages: ${newBook.pages}
-                              Has read: ${newBook.isRead}`;
-    main.appendChild(createBook);
 
-    // Create container to hold buttons
-    const bookContainer = document.createElement('div');
-    bookContainer.classList.add('book-btn-container');
-    createBook.appendChild(bookContainer);
-
-    // Add delete and read buttons
-    const deleteBookBtn = document.createElement('button');
-    const readBookBtn = document.createElement('button');
-
-    deleteBookBtn.classList.add('delete-book');
-    readBookBtn.classList.add('read-book');
-
-    deleteBookBtn.textContent = 'Remove';
-    readBookBtn.textContent = 'Finished';
-
-    bookContainer.appendChild(deleteBookBtn);
-    bookContainer.appendChild(readBookBtn);
-
-    // Reset input values in form 
     resetInput();
 
     // Prevent trying to send data to server and close the dialog box
     event.preventDefault();
     dialog.close();
+
+    displayLibrary(myLibrary);
 });
 
 addButton.addEventListener('click', () => {
