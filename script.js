@@ -26,13 +26,11 @@ function resetInput() {
     titleInput.value = "";
     authorInput.value = "";
     pagesInput.value = "";
-    readInput.value = "";
 }
 
 function addBookToLibrary(book) {
     return myLibrary.push(book);
 }
-
 
 function displayLibrary(library) {
     for (const book of library) {
@@ -69,13 +67,20 @@ function displayLibrary(library) {
             })
     
             readBook.addEventListener('click', () => {
-                console.log('whatup doe');
+                readStatus(createBook);
             })
         }
         else {
             continue;
         }
     }
+}
+
+Book.prototype.readStatus = function (book) {
+    book.textContent = `Title: ${book.title}
+    Author: ${book.author}
+    Pages: ${book.pages}
+    Has read: ${sup}`;
 }
 
 submitButton.addEventListener('click', (event) => {
