@@ -22,6 +22,10 @@ function Book(title, author, pages, isRead, index = increment, deleted = false) 
     this.deleted = deleted;
 }
 
+Book.prototype.readStatus = function () {
+    this.isRead = !this.isRead;
+}
+
 function resetInput() {
     titleInput.value = "";
     authorInput.value = "";
@@ -67,20 +71,18 @@ function displayLibrary(library) {
             })
     
             readBook.addEventListener('click', () => {
-                readStatus(createBook);
+                book.readStatus();
+                createBook.textContent = `Title: ${book.title}
+                                          Author: ${book.author}
+                                          Pages: ${book.pages}
+                                          Has read: ${book.isRead}`;
+                createBook.appendChild(bookContainer);
             })
         }
         else {
             continue;
         }
     }
-}
-
-Book.prototype.readStatus = function (book) {
-    book.textContent = `Title: ${book.title}
-    Author: ${book.author}
-    Pages: ${book.pages}
-    Has read: ${sup}`;
 }
 
 submitButton.addEventListener('click', (event) => {
